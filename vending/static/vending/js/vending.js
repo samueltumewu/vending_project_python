@@ -32,7 +32,7 @@ async function buyDrink(drink, price) {
 }
 
 function updateDisplay(balance) {
-    document.getElementById('balance-display').innerText = `Balance: Rp ${balance}`;
+    document.getElementById('balance-display') = `Balance: Rp ${balance}`;
     document.getElementById('btn-aqua').disabled = balance < 5000;
     document.getElementById('btn-cola').disabled = balance < 8000;
     document.getElementById('btn-tehkotak').disabled = balance < 6000;
