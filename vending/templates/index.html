@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vending Machine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Your custom JS -->
+  <script src="{% static 'vending/js/vending.js' %}" defer></script>
+</head>
+
+<body class="bg-light">
+
+  <div class="container py-5">
+    <h1 class="text-center mb-4">🥤 Vending Machine</h1>
+
+    <!-- Balance Display -->
+    <div class="card shadow-sm mb-4">
+      <div class="card-body text-center">
+        <h5>Current Balance</h5>
+        <h2 id="balance-display" class="text-primary fw-bold">0 rupiah</h2>
+      </div>
+    </div>
+
+    <!-- Money Input Buttons -->
+    <div class="mb-4">
+      <h5>Insert Money</h5>
+      <div class="d-flex flex-wrap gap-2">
+        <button class="btn btn-outline-success" onclick="insertMoney(1000)">Rp 1.000</button>
+        <button class="btn btn-outline-success" onclick="insertMoney(2000)">Rp 2.000</button>
+        <button class="btn btn-outline-success" onclick="insertMoney(5000)">Rp 5.000</button>
+        <button class="btn btn-outline-success" onclick="insertMoney(10000)">Rp 10.000</button>
+        <button class="btn btn-outline-success" onclick="insertMoney(20000)">Rp 20.000</button>
+        <button class="btn btn-outline-success" onclick="insertMoney(50000)">Rp 50.000</button>
+        <button class="btn btn-outline-success" onclick="insertMoney(100000)">Rp 100.000</button>
+      </div>
+    </div>
+    
+    <!-- Drink Options -->
+    <div>
+      <h5>Select a Drink</h5>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <button id="btn-aqua" class="btn btn-primary w-100" onclick="buyDrink('Aqua', 5000)" disabled>Aqua (Rp
+            5.000)</button>
+        </div>
+        <div class="col-md-4">
+          <button id="btn-cola" class="btn btn-danger w-100" onclick="buyDrink('Cola', 8000)" disabled>Cola (Rp
+            8.000)</button>
+        </div>
+        <div class="col-md-4">
+          <button id="btn-tehkotak" class="btn btn-warning w-100" onclick="buyDrink('Teh Kotak', 6000)" disabled>Teh
+            Kotak (Rp 6.000)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
